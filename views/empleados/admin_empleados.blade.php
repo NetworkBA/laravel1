@@ -38,16 +38,16 @@
                       <tbody>
 
 
-                      @foreach($empleado as $empleado)
+                      @foreach($empleados as $empleado)
                       <tr>
                         _create_empleados_table
-                        <td>{{empleado->nombre}}</td>
-                        <td>{{empleado->apellido}}</td>
-                        <td>{{empleado->cedula}}</td>
-                        <td>{{empleado->email}}</td>
-                        <td>{{empleado->lugar_nacimiento}}</td>
-                        <td>{{empleado->sexo}}</td>
-                        <td>{{empleado->telefono}}</td>
+                        <td>{{$empleado->nombre}}</td>
+                        <td>{{$empleado->apellido}}</td>
+                        <td>{{$empleado->cedula}}</td>
+                        <td>{{$empleado->email}}</td>
+                        <td>{{$empleado->lugar_nacimiento}}</td>
+                        <td>{{$empleado->sexo}}</td>
+                        <td>{{$empleado->telefono}}</td>
                         <td>
                             <div style="display:flex;">
                                 <a href={{url('empleados/'.$empleado->id.'')}}></a>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Empleado;
+
+use DB;
+
 class empleadosController extends Controller
 {
     public function index(){
@@ -27,5 +31,20 @@ class empleadosController extends Controller
       Alert::success("Datos de empleados guardados exitosamente");
 
       return view('empleados.editar_empleado',compact('empleados'));
+    }
+
+    public function edit($id)
+    {
+      $empleados = Empleado::findOrFail($id);
+
+      return view('empleados.editar_empleado',compact('empleados'));
+    }
+
+    public function destroy($id)
+    {
+      $empleados = Empleado::findOrFail($id);
+
+      Alert:success('Datos eliminados de la base de datos');
+      return redirect('empelados');
     }
 }

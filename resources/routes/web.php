@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ismael', function () {
+    return ('Hola ismael');
+});
+
 
 Route::resource('empleados','empleadosController');
